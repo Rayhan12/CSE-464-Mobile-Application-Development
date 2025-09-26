@@ -1,234 +1,582 @@
-# 📱 CSE 464: Mobile Application Development
+# 🎯 Dart Basics - Your Programming Foundation
 
 <div align="center">
 
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Mobile](https://img.shields.io/badge/Mobile-Development-FF6B6B?style=for-the-badge)
-![IUB](https://img.shields.io/badge/IUB-CSE%20464-4ECDC4?style=for-the-badge)
+![Basics](https://img.shields.io/badge/Level-Basics-4ECDC4?style=for-the-badge)
+![Flutter](https://img.shields.io/badge/Flutter-Ready-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
-**Welcome to the most exciting mobile development journey you'll ever take! 🚀**
+**Master the Language That Powers Flutter! 🚀**
 
-*Where widgets meet wonders and code becomes magic! ✨*
+*Every Flutter expert started here - let's build your foundation! ✨*
 
 </div>
 
 ---
 
-## 🎯 Course Overview
+## 🎯 Class 1: Dart Basics Overview
 
-Welcome to **CSE 464: Mobile Application Development**! This isn't just another programming course – it's your gateway to building the next generation of mobile apps that could change the world! 🌍
+Welcome to your first step into the world of Dart! This branch covers all the fundamental concepts you need to master before diving into Flutter development.
 
-### What You'll Learn 🧠
-- **Flutter & Dart**: The dynamic duo that's taking the mobile world by storm
-- **Cross-platform Development**: Build once, run everywhere (iOS, Android, Web, Desktop!)
-- **UI/UX Design**: Create beautiful, intuitive interfaces that users will love
-- **State Management**: Master the art of managing app data like a pro
-- **API Integration**: Connect your apps to the real world
-- **Testing & Deployment**: Ship your apps with confidence
+### 📚 What You'll Learn
 
-### Why Flutter? 🤔
-Think of Flutter as the Swiss Army knife of mobile development:
-- ⚡ **Fast**: Compile to native code for maximum performance
-- 🎨 **Beautiful**: Material Design and Cupertino widgets out of the box
-- 🔄 **Hot Reload**: See your changes instantly (no more waiting!)
-- 🌐 **Cross-platform**: One codebase, multiple platforms
-- 🏢 **Industry Standard**: Used by Google, BMW, Alibaba, and many more!
+- 🎭 **Variables & Data Types**: The building blocks of Dart
+- 🔒 **Constants & Final**: Immutable values
+- ⚡ **Operators**: Mathematical and logical operations
+- 🔀 **Control Flow**: Making decisions and repeating actions
+- 🎪 **Functions**: Reusable code blocks
+- 📋 **Collections**: Lists, Maps, and Sets
+- 🛡️ **Null Safety**: Dart's modern approach to null handling
+- 💬 **Input/Output**: Communicating with users
 
 ---
 
-## 🗺️ How to Navigate This Repository
+## 📖 Lecture Notes
 
-This repository is organized like a well-structured city with different neighborhoods (branches) for each topic:
+### 1. Introduction to Dart & Dart SDK 🚀
 
-```
-🏠 Main Branch (master/main)
-├── 📚 Course Materials
-├── 🛠️ Setup Instructions
-└── 🎯 Quick Start Guide
+**Dart** is a client-optimized language for fast apps on any platform. It's the language that powers Flutter!
 
-🌿 Topic Branches
-├── 📱 flutter-basics
-├── 🎨 ui-design
-├── 🔄 state-management
-├── 🌐 api-integration
-├── 🧪 testing
-└── 🚀 deployment
-```
+#### Why Dart?
+- ⚡ **Fast**: Compiles to native code
+- 🎯 **Productive**: Great tooling and IDE support
+- 🛡️ **Safe**: Strong typing and null safety
+- 🌐 **Portable**: Runs on mobile, web, and desktop
 
-### 🎪 Branch Structure Explained
-
-Each topic branch contains:
-- 📖 **Lecture Notes**: Comprehensive README with theory and examples
-- 💻 **Code Examples**: Working Flutter projects
-- 🎯 **Exercises**: Hands-on practice problems
-- 🏆 **Projects**: Real-world applications to build
-- 📚 **Resources**: Additional reading and tutorials
-
----
-
-## 🚀 Quick Start Guide
-
-### Prerequisites Checklist ✅
-
-Before we dive in, make sure you have:
-
-- [ ] **Git** installed ([Download here](https://git-scm.com/downloads))
-- [ ] **Flutter SDK** installed ([Installation guide](https://flutter.dev/docs/get-started/install))
-- [ ] **VS Code** or **Android Studio** with Flutter extensions
-- [ ] **Android Studio** (for Android development)
-- [ ] **Xcode** (for iOS development - macOS only)
-- [ ] A healthy dose of curiosity and coffee ☕
-
-### 🛠️ Local Setup Instructions
-
-#### Step 1: Clone the Repository
+#### Dart SDK Installation:
 ```bash
-# Clone the main repository
-git clone https://github.com/yourusername/CSE464-Mobile-Development.git
-cd CSE464-Mobile-Development
+# Check if Dart is installed
+dart --version
+
+# If not installed, follow the Flutter installation guide
+# Dart comes bundled with Flutter
 ```
 
-#### Step 2: Navigate to a Topic Branch
-```bash
-# See all available branches
-git branch -r
+### 2. Variables & Data Types 🎭
 
-# Switch to a specific topic (example: Flutter Basics)
-git checkout flutter-basics
+Dart is a statically typed language, but it can infer types.
 
-# Or create and switch to a new branch
-git checkout -b your-name-flutter-basics
+```dart
+void main() {
+  // Explicit type declaration
+  String name = "Flutter Developer";
+  int age = 25;
+  double height = 5.9;
+  bool isLearning = true;
+  
+  // Type inference with 'var'
+  var city = "Dhaka";        // Dart infers this as String
+  var score = 95.5;          // Dart infers this as double
+  var isPassed = true;       // Dart infers this as bool
+  
+  // Dynamic type (use sparingly!)
+  dynamic anything = "Hello";
+  anything = 42;
+  anything = true;
+  
+  print("Name: $name, Age: $age, Height: $height");
+  print("City: $city, Score: $score, Passed: $isPassed");
+}
 ```
 
-#### Step 3: Set Up Your Development Environment
-```bash
-# Verify Flutter installation
-flutter doctor
+#### Data Types Summary:
+| Type | Description | Example |
+|------|-------------|---------|
+| `int` | Integer numbers | `42`, `-17` |
+| `double` | Decimal numbers | `3.14`, `-2.5` |
+| `String` | Text data | `"Hello World"` |
+| `bool` | True/false values | `true`, `false` |
+| `var` | Type inference | `var x = 42` |
+| `dynamic` | Any type | `dynamic x = "anything"` |
 
-# Get dependencies for any Flutter project
-cd project-folder
-flutter pub get
+### 3. Constants & Final 🔒
 
-# Run the app
-flutter run
+Both `const` and `final` create immutable values, but they work differently.
+
+```dart
+void main() {
+  // final - runtime constant
+  final String currentTime = DateTime.now().toString();
+  final int userAge = calculateAge(); // Function call allowed
+  
+  // const - compile-time constant
+  const String appName = "My Flutter App";
+  const double pi = 3.14159;
+  const List<String> colors = ["red", "green", "blue"];
+  
+  // const objects
+  const person = Person("John", 25); // All fields must be const
+  
+  print("App: $appName, PI: $pi");
+  print("Current time: $currentTime");
+}
+
+class Person {
+  final String name;
+  final int age;
+  
+  const Person(this.name, this.age);
+}
+
+int calculateAge() {
+  return 25; // Simplified for example
+}
 ```
 
-### 🎯 Pro Tips for Success 💡
+### 4. Operators ⚡
 
-1. **Start with the Basics**: Don't skip the fundamentals – they're the foundation of everything!
-2. **Practice Daily**: Even 30 minutes of coding daily beats 5 hours once a week
-3. **Break Things**: Don't be afraid to experiment and break code – that's how you learn!
-4. **Join the Community**: Flutter has an amazing community – use it!
-5. **Build Projects**: Apply what you learn by building real projects
+Dart supports various types of operators.
+
+```dart
+void main() {
+  int a = 10;
+  int b = 3;
+  
+  // Arithmetic operators
+  print("Addition: ${a + b}");        // 13
+  print("Subtraction: ${a - b}");     // 7
+  print("Multiplication: ${a * b}");  // 30
+  print("Division: ${a / b}");        // 3.333...
+  print("Integer division: ${a ~/ b}"); // 3
+  print("Modulus: ${a % b}");         // 1
+  
+  // Comparison operators
+  print("Equal: ${a == b}");          // false
+  print("Not equal: ${a != b}");      // true
+  print("Greater than: ${a > b}");    // true
+  print("Less than: ${a < b}");       // false
+  print("Greater or equal: ${a >= b}"); // true
+  print("Less or equal: ${a <= b}");  // false
+  
+  // Logical operators
+  bool x = true;
+  bool y = false;
+  print("AND: ${x && y}");            // false
+  print("OR: ${x || y}");             // true
+  print("NOT: ${!x}");                // false
+  
+  // Assignment operators
+  int c = 5;
+  c += 3;  // c = c + 3
+  c -= 2;  // c = c - 2
+  c *= 2;  // c = c * 2
+  c ~/= 3; // c = c ~/ 3
+  print("Final c: $c");
+}
+```
+
+### 5. Conditional Statements 🔀
+
+Control the flow of your program with conditions.
+
+```dart
+void main() {
+  int score = 85;
+  String grade;
+  
+  // if-else statements
+  if (score >= 90) {
+    grade = "A";
+  } else if (score >= 80) {
+    grade = "B";
+  } else if (score >= 70) {
+    grade = "C";
+  } else if (score >= 60) {
+    grade = "D";
+  } else {
+    grade = "F";
+  }
+  
+  print("Grade: $grade");
+  
+  // Ternary operator
+  String status = score >= 60 ? "Passed" : "Failed";
+  print("Status: $status");
+  
+  // Switch statement
+  String day = "Monday";
+  switch (day) {
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+      print("Weekday");
+      break;
+    case "Saturday":
+    case "Sunday":
+      print("Weekend");
+      break;
+    default:
+      print("Invalid day");
+  }
+}
+```
+
+### 6. Loops 🔄
+
+Repeat code execution with different loop types.
+
+```dart
+void main() {
+  // for loop
+  print("For loop:");
+  for (int i = 1; i <= 5; i++) {
+    print("Count: $i");
+  }
+  
+  // while loop
+  print("\nWhile loop:");
+  int j = 1;
+  while (j <= 3) {
+    print("While count: $j");
+    j++;
+  }
+  
+  // do-while loop
+  print("\nDo-while loop:");
+  int k = 1;
+  do {
+    print("Do-while count: $k");
+    k++;
+  } while (k <= 3);
+  
+  // for-in loop (for collections)
+  print("\nFor-in loop:");
+  List<String> fruits = ["apple", "banana", "orange"];
+  for (String fruit in fruits) {
+    print("Fruit: $fruit");
+  }
+  
+  // forEach method
+  print("\nForEach method:");
+  fruits.forEach((fruit) => print("Fruit: $fruit"));
+}
+```
+
+### 7. Functions 🎪
+
+Create reusable code blocks with functions.
+
+```dart
+// Function with return type
+int add(int a, int b) {
+  return a + b;
+}
+
+// Arrow function (single expression)
+int multiply(int a, int b) => a * b;
+
+// Function with optional parameters
+String greet(String name, [String? title]) {
+  if (title != null) {
+    return "Hello, $title $name!";
+  }
+  return "Hello, $name!";
+}
+
+// Function with named parameters
+String createUser({required String name, int age = 18, String? email}) {
+  String result = "Name: $name, Age: $age";
+  if (email != null) {
+    result += ", Email: $email";
+  }
+  return result;
+}
+
+// Function with default values
+double calculateArea(double length, [double width = 1.0]) {
+  return length * width;
+}
+
+void main() {
+  // Using functions
+  print("Sum: ${add(5, 3)}");
+  print("Product: ${multiply(4, 6)}");
+  print(greet("Alice"));
+  print(greet("Bob", "Dr."));
+  print(createUser(name: "Charlie", age: 25, email: "charlie@example.com"));
+  print("Area: ${calculateArea(10.0)}");
+  print("Rectangle Area: ${calculateArea(10.0, 5.0)}");
+}
+```
+
+### 8. Lists & List Operations 📋
+
+Lists are ordered collections of objects.
+
+```dart
+void main() {
+  // Creating lists
+  List<int> numbers = [1, 2, 3, 4, 5];
+  var fruits = ["apple", "banana", "orange"]; // Type inferred
+  List<String> emptyList = [];
+  
+  // Accessing elements
+  print("First number: ${numbers[0]}");
+  print("Last fruit: ${fruits[fruits.length - 1]}");
+  
+  // Adding elements
+  numbers.add(6);
+  numbers.addAll([7, 8, 9]);
+  fruits.insert(1, "grape");
+  
+  // Removing elements
+  numbers.remove(5);
+  fruits.removeAt(0);
+  
+  // List operations
+  print("Numbers: $numbers");
+  print("Fruits: $fruits");
+  print("Length: ${numbers.length}");
+  print("Contains 3: ${numbers.contains(3)}");
+  print("Index of 4: ${numbers.indexOf(4)}");
+  
+  // List methods
+  numbers.sort();
+  print("Sorted: $numbers");
+  
+  var doubled = numbers.map((n) => n * 2).toList();
+  print("Doubled: $doubled");
+  
+  var evens = numbers.where((n) => n % 2 == 0).toList();
+  print("Even numbers: $evens");
+}
+```
+
+### 9. Maps & Map Operations 🗺️
+
+Maps store key-value pairs.
+
+```dart
+void main() {
+  // Creating maps
+  Map<String, int> ages = {
+    "Alice": 25,
+    "Bob": 30,
+    "Charlie": 35,
+  };
+  
+  var scores = <String, double>{}; // Empty map
+  Map<String, String> capitals = Map();
+  
+  // Adding elements
+  ages["David"] = 28;
+  scores["Math"] = 95.5;
+  scores["Science"] = 87.0;
+  
+  // Accessing values
+  print("Alice's age: ${ages["Alice"]}");
+  print("Math score: ${scores["Math"]}");
+  
+  // Map operations
+  print("All ages: $ages");
+  print("All scores: $scores");
+  print("Number of people: ${ages.length}");
+  print("Has Alice: ${ages.containsKey("Alice")}");
+  print("Has age 25: ${ages.containsValue(25)}");
+  
+  // Iterating through maps
+  print("\nAges:");
+  ages.forEach((name, age) {
+    print("$name is $age years old");
+  });
+  
+  print("\nScores:");
+  for (String subject in scores.keys) {
+    print("$subject: ${scores[subject]}");
+  }
+}
+```
+
+### 10. Sets 🎯
+
+Sets contain unique elements (no duplicates).
+
+```dart
+void main() {
+  // Creating sets
+  Set<String> colors = {"red", "green", "blue"};
+  var numbers = <int>{1, 2, 3, 4, 5};
+  Set<String> emptySet = {};
+  
+  // Adding elements
+  colors.add("yellow");
+  colors.addAll(["purple", "orange"]);
+  
+  // Sets automatically remove duplicates
+  numbers.add(3); // Won't add duplicate
+  numbers.add(6); // Will add new element
+  
+  print("Colors: $colors");
+  print("Numbers: $numbers");
+  
+  // Set operations
+  Set<String> primaryColors = {"red", "blue", "yellow"};
+  Set<String> secondaryColors = {"green", "purple", "orange"};
+  
+  // Union
+  var allColors = primaryColors.union(secondaryColors);
+  print("All colors: $allColors");
+  
+  // Intersection
+  var commonColors = colors.intersection(primaryColors);
+  print("Common colors: $commonColors");
+  
+  // Difference
+  var onlyPrimary = primaryColors.difference(secondaryColors);
+  print("Only primary: $onlyPrimary");
+}
+```
+
+### 11. Null Safety 🛡️
+
+Dart's null safety prevents null reference errors.
+
+```dart
+void main() {
+  // Nullable types (can be null)
+  String? nullableString;
+  int? nullableInt;
+  
+  // Non-nullable types (cannot be null)
+  String nonNullableString = "Hello";
+  int nonNullableInt = 42;
+  
+  // Null-aware operators
+  String? name;
+  print("Name length: ${name?.length}"); // Safe call
+  print("Name or default: ${name ?? "Unknown"}"); // Null coalescing
+  
+  // Null assertion operator (!) - use carefully!
+  String? definitelyNotNull = "Hello";
+  print("Definitely not null: ${definitelyNotNull!.length}");
+  
+  // late keyword - initialize later
+  late String lateString;
+  lateString = "Initialized later";
+  print("Late string: $lateString");
+  
+  // Null safety in functions
+  String? getUserName(int id) {
+    if (id == 1) return "Alice";
+    return null;
+  }
+  
+  String? userName = getUserName(1);
+  if (userName != null) {
+    print("User: $userName");
+  } else {
+    print("User not found");
+  }
+}
+```
+
+### 12. Basic Input/Output 💬
+
+Communicate with users through console I/O.
+
+```dart
+import 'dart:io';
+
+void main() {
+  // Output
+  print("Hello, World!");
+  print("This is a new line");
+  
+  // String interpolation
+  String name = "Flutter Developer";
+  int age = 25;
+  print("Name: $name, Age: $age");
+  print("Next year I'll be ${age + 1}");
+  
+  // Basic input (for console apps)
+  stdout.write("Enter your name: ");
+  String? input = stdin.readLineSync();
+  print("Hello, $input!");
+  
+  // Number input
+  stdout.write("Enter your age: ");
+  String? ageInput = stdin.readLineSync();
+  if (ageInput != null) {
+    int? age = int.tryParse(ageInput);
+    if (age != null) {
+      print("You are $age years old");
+    } else {
+      print("Invalid age input");
+    }
+  }
+}
+```
 
 ---
 
-## 📚 Course Structure & Timeline
+## 💻 Hands-On Exercises
 
-### Week 1-2: Flutter Fundamentals 🏗️
-- **Branch**: `flutter-basics`
-- **Topics**: Dart basics, Widgets, Layouts, Navigation
-- **Project**: "Hello World" → "My First App"
+### Exercise 1: Calculator App 🧮
+Create a simple calculator that performs basic operations.
 
-### Week 3-4: UI/UX Design 🎨
-- **Branch**: `ui-design`
-- **Topics**: Material Design, Custom Widgets, Animations
-- **Project**: "Beautiful Calculator App"
+**Requirements**:
+- Take two numbers as input
+- Perform addition, subtraction, multiplication, division
+- Display results with proper formatting
 
-### Week 5-6: State Management 🔄
-- **Branch**: `state-management`
-- **Topics**: setState, Provider, Bloc, Riverpod
-- **Project**: "Todo List with State Management"
+### Exercise 2: Student Grade Calculator 📊
+Build a program that calculates student grades.
 
-### Week 7-8: Data & APIs 🌐
-- **Branch**: `api-integration`
-- **Topics**: HTTP requests, JSON parsing, Local storage
-- **Project**: "Weather App with API"
+**Requirements**:
+- Input student name and scores
+- Calculate average score
+- Determine letter grade (A, B, C, D, F)
+- Display results in a formatted way
 
-### Week 9-10: Advanced Topics 🚀
-- **Branch**: `advanced-topics`
-- **Topics**: Firebase, Authentication, Push notifications
-- **Project**: "Social Media App"
+### Exercise 3: Shopping List Manager 🛒
+Create a shopping list management system.
 
-### Week 11-12: Testing & Deployment 🧪
-- **Branch**: `testing-deployment`
-- **Topics**: Unit testing, Widget testing, App store deployment
-- **Project**: "Final Portfolio App"
+**Requirements**:
+- Add items to the list
+- Remove items from the list
+- Display all items
+- Search for specific items
+- Count total items
 
 ---
 
-## 🎓 Learning Resources
+## 🎯 Key Takeaways
 
-### 📖 Essential Reading
-- [Flutter Documentation](https://flutter.dev/docs) - Your bible for Flutter
-- [Dart Language Tour](https://dart.dev/guides/language/language-tour) - Master the language
-- [Flutter Cookbook](https://flutter.dev/docs/cookbook) - Practical examples
+After completing this branch, you should understand:
 
-### 🎥 Video Resources
-- [Flutter YouTube Channel](https://www.youtube.com/c/flutterdev) - Official Flutter videos
-- [The Net Ninja Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ) - Great beginner series
-
-### 🛠️ Tools & Extensions
-- **VS Code Extensions**: Flutter, Dart, Awesome Flutter Snippets
-- **Android Studio**: Flutter and Dart plugins
-- **Figma**: For UI/UX design (free tier available)
+1. **Dart Fundamentals**: Variables, data types, and basic syntax
+2. **Control Flow**: Making decisions and repeating actions
+3. **Functions**: Creating reusable code blocks
+4. **Collections**: Working with Lists, Maps, and Sets
+5. **Null Safety**: Dart's modern approach to null handling
+6. **Input/Output**: Basic user interaction
 
 ---
 
-## 🤝 Getting Help
+## 🚀 Next Steps
 
-### When You're Stuck (And You Will Be! 😅)
-
-1. **Check the Branch README**: Each topic branch has detailed explanations
-2. **Google It**: 90% of Flutter problems have been solved before
-3. **Stack Overflow**: The Flutter community is super helpful
-4. **Ask in Class**: Don't suffer in silence – we're all learning together!
-5. **Office Hours**: Come prepared with specific questions
-
-### 🆘 Common Issues & Solutions
-
-| Problem | Solution |
-|---------|----------|
-| `flutter doctor` shows issues | Follow the specific instructions it provides |
-| App won't run | Check if you're in the right directory and run `flutter pub get` |
-| Hot reload not working | Try hot restart instead (`r` in terminal) |
-| Emulator not starting | Check if virtualization is enabled in BIOS |
+Once you've mastered Dart basics:
+1. Move to the `dart-advanced` branch for advanced concepts
+2. Practice with more complex programs
+3. Explore Dart's standard library
+4. Get ready for Flutter development!
 
 ---
 
-## 🏆 Success Metrics
+## 📚 Additional Resources
 
-By the end of this course, you should be able to:
-
-- [ ] Build a complete Flutter app from scratch
-- [ ] Implement beautiful, responsive UIs
-- [ ] Manage app state effectively
-- [ ] Integrate with external APIs
-- [ ] Test your applications
-- [ ] Deploy apps to app stores
-- [ ] Debug and troubleshoot issues
-- [ ] Work with a team on Flutter projects
-
----
-
-## 🎉 Final Words
-
-Remember: **Every expert was once a beginner. Every pro was once an amateur. Every icon was once an unknown.** 
-
-The journey of a thousand apps begins with a single `flutter create` command! 
-
-So grab your favorite beverage, fire up your IDE, and let's build some amazing mobile apps together! 🚀
+- [Dart Language Tour](https://dart.dev/guides/language/language-tour)
+- [Dart API Documentation](https://api.dart.dev/)
+- [DartPad](https://dartpad.dev/) - Online Dart editor
 
 ---
 
 <div align="center">
 
-**Happy Coding! 🎯**
+**Master the Basics! 🎯**
 
-*Made with ❤️ for the future mobile developers of the world*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
+*Every expert was once a beginner - you're on the right path!*
 
 </div>
