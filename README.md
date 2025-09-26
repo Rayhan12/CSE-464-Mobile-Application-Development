@@ -234,9 +234,4 @@ So grab your favorite beverage, fire up your IDE, and let's build some amazing m
 
 **Happy Coding! 🎯**
 
-*Made with ❤️ for the future mobile developers of the world*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
-
 </div>
