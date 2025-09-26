@@ -1,234 +1,479 @@
-# 📱 CSE 464: Mobile Application Development
+# 🚀 Dart Advanced - Mastering Object-Oriented Programming
 
 <div align="center">
 
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Mobile](https://img.shields.io/badge/Mobile-Development-FF6B6B?style=for-the-badge)
-![IUB](https://img.shields.io/badge/IUB-CSE%20464-4ECDC4?style=for-the-badge)
+![Dart Advanced](https://img.shields.io/badge/Dart-Advanced-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![OOP](https://img.shields.io/badge/OOP-Master-FF6B6B?style=for-the-badge)
+![Async](https://img.shields.io/badge/Async-Await-4ECDC4?style=for-the-badge)
 
-**Welcome to the most exciting mobile development journey you'll ever take! 🚀**
+**Level Up Your Dart Skills! 🎯**
 
-*Where widgets meet wonders and code becomes magic! ✨*
+*From basics to advanced - become a Dart ninja! ⚡*
 
 </div>
 
 ---
 
-## 🎯 Course Overview
+## 🎯 Class 2: Dart Advanced Overview
 
-Welcome to **CSE 464: Mobile Application Development**! This isn't just another programming course – it's your gateway to building the next generation of mobile apps that could change the world! 🌍
+Welcome to the advanced concepts of Dart! This branch covers everything you need to become a proficient Dart developer and prepare for complex Flutter applications.
 
-### What You'll Learn 🧠
-- **Flutter & Dart**: The dynamic duo that's taking the mobile world by storm
-- **Cross-platform Development**: Build once, run everywhere (iOS, Android, Web, Desktop!)
-- **UI/UX Design**: Create beautiful, intuitive interfaces that users will love
-- **State Management**: Master the art of managing app data like a pro
-- **API Integration**: Connect your apps to the real world
-- **Testing & Deployment**: Ship your apps with confidence
+### 📚 What You'll Learn
 
-### Why Flutter? 🤔
-Think of Flutter as the Swiss Army knife of mobile development:
-- ⚡ **Fast**: Compile to native code for maximum performance
-- 🎨 **Beautiful**: Material Design and Cupertino widgets out of the box
-- 🔄 **Hot Reload**: See your changes instantly (no more waiting!)
-- 🌐 **Cross-platform**: One codebase, multiple platforms
-- 🏢 **Industry Standard**: Used by Google, BMW, Alibaba, and many more!
-
----
-
-## 🗺️ How to Navigate This Repository
-
-This repository is organized like a well-structured city with different neighborhoods (branches) for each topic:
-
-```
-🏠 Main Branch (master/main)
-├── 📚 Course Materials
-├── 🛠️ Setup Instructions
-└── 🎯 Quick Start Guide
-
-🌿 Topic Branches
-├── 📱 flutter-basics
-├── 🎨 ui-design
-├── 🔄 state-management
-├── 🌐 api-integration
-├── 🧪 testing
-└── 🚀 deployment
-```
-
-### 🎪 Branch Structure Explained
-
-Each topic branch contains:
-- 📖 **Lecture Notes**: Comprehensive README with theory and examples
-- 💻 **Code Examples**: Working Flutter projects
-- 🎯 **Exercises**: Hands-on practice problems
-- 🏆 **Projects**: Real-world applications to build
-- 📚 **Resources**: Additional reading and tutorials
+- 🏗️ **Classes & Objects**: Object-oriented programming fundamentals
+- 🧬 **Inheritance & Polymorphism**: Code reuse and flexibility
+- 🎭 **Mixins & Abstract Classes**: Advanced OOP concepts
+- 🔌 **Interfaces & Implementations**: Contract-based programming
+- ⚠️ **Exception Handling**: Robust error management
+- 🎪 **Generics**: Type-safe reusable code
+- ⏰ **Futures & Async/Await**: Asynchronous programming
+- 🌊 **Streams**: Reactive programming
+- 📦 **Collections Advanced**: Powerful data manipulation
+- 🔧 **Extension Methods**: Adding functionality to existing types
+- 📝 **Typedef & Function Types**: Function as first-class citizens
+- 📚 **Packages & Imports**: Code organization and reuse
 
 ---
 
-## 🚀 Quick Start Guide
+## 📖 Lecture Notes
 
-### Prerequisites Checklist ✅
+### 1. Classes & Objects 🏗️
 
-Before we dive in, make sure you have:
+Classes are blueprints for creating objects. They encapsulate data and behavior.
 
-- [ ] **Git** installed ([Download here](https://git-scm.com/downloads))
-- [ ] **Flutter SDK** installed ([Installation guide](https://flutter.dev/docs/get-started/install))
-- [ ] **VS Code** or **Android Studio** with Flutter extensions
-- [ ] **Android Studio** (for Android development)
-- [ ] **Xcode** (for iOS development - macOS only)
-- [ ] A healthy dose of curiosity and coffee ☕
+```dart
+// Basic class definition
+class Person {
+  // Instance variables (fields)
+  String name;
+  int age;
+  String? email;
+  
+  // Constructor
+  Person(this.name, this.age, [this.email]);
+  
+  // Named constructor
+  Person.guest() : name = "Guest", age = 0;
+  
+  // Instance methods
+  void introduce() {
+    print("Hi, I'm $name and I'm $age years old!");
+    if (email != null) {
+      print("My email is $email");
+    }
+  }
+  
+  // Getter
+  String get info => "$name ($age years old)";
+  
+  // Setter
+  set updateAge(int newAge) {
+    if (newAge >= 0) {
+      age = newAge;
+    }
+  }
+  
+  // Static method
+  static Person createAdult(String name) {
+    return Person(name, 18);
+  }
+  
+  // Override toString
+  @override
+  String toString() {
+    return "Person(name: $name, age: $age, email: $email)";
+  }
+}
 
-### 🛠️ Local Setup Instructions
-
-#### Step 1: Clone the Repository
-```bash
-# Clone the main repository
-git clone https://github.com/yourusername/CSE464-Mobile-Development.git
-cd CSE464-Mobile-Development
-```
-
-#### Step 2: Navigate to a Topic Branch
-```bash
-# See all available branches
-git branch -r
-
-# Switch to a specific topic (example: Flutter Basics)
-git checkout flutter-basics
-
-# Or create and switch to a new branch
-git checkout -b your-name-flutter-basics
-```
-
-#### Step 3: Set Up Your Development Environment
-```bash
-# Verify Flutter installation
-flutter doctor
-
-# Get dependencies for any Flutter project
-cd project-folder
-flutter pub get
-
-# Run the app
-flutter run
+void main() {
+  // Creating objects
+  Person person1 = Person("Alice", 25, "alice@example.com");
+  Person person2 = Person.guest();
+  
+  // Using objects
+  person1.introduce();
+  print(person2.info);
+  person1.updateAge = 26;
+  print(person1);
+  
+  // Static method
+  Person adult = Person.createAdult("Charlie");
+  print(adult);
+}
 ```
 
-### 🎯 Pro Tips for Success 💡
+### 2. Inheritance & Polymorphism 🧬
 
-1. **Start with the Basics**: Don't skip the fundamentals – they're the foundation of everything!
-2. **Practice Daily**: Even 30 minutes of coding daily beats 5 hours once a week
-3. **Break Things**: Don't be afraid to experiment and break code – that's how you learn!
-4. **Join the Community**: Flutter has an amazing community – use it!
-5. **Build Projects**: Apply what you learn by building real projects
+Inheritance allows classes to inherit properties and methods from other classes.
+
+```dart
+// Base class (Parent)
+class Animal {
+  String name;
+  int age;
+  
+  Animal(this.name, this.age);
+  
+  void makeSound() {
+    print("Some generic animal sound");
+  }
+  
+  void eat() {
+    print("$name is eating");
+  }
+}
+
+// Derived class (Child)
+class Dog extends Animal {
+  String breed;
+  
+  // Constructor with super call
+  Dog(String name, int age, this.breed) : super(name, age);
+  
+  // Override parent method
+  @override
+  void makeSound() {
+    print("$name barks: Woof! Woof!");
+  }
+  
+  // Additional method specific to Dog
+  void fetch() {
+    print("$name is fetching the ball");
+  }
+}
+
+class Cat extends Animal {
+  bool isIndoor;
+  
+  Cat(String name, int age, this.isIndoor) : super(name, age);
+  
+  @override
+  void makeSound() {
+    print("$name meows: Meow! Meow!");
+  }
+  
+  void purr() {
+    print("$name is purring");
+  }
+}
+
+void main() {
+  // Polymorphism in action
+  List<Animal> animals = [
+    Dog("Buddy", 3, "Golden Retriever"),
+    Cat("Whiskers", 2, true),
+    Animal("Generic", 1),
+  ];
+  
+  // Each animal makes its own sound (polymorphism)
+  for (Animal animal in animals) {
+    animal.makeSound();
+    animal.eat();
+    print("---");
+  }
+}
+```
+
+### 3. Mixins & Abstract Classes 🎭
+
+Mixins provide a way to reuse code in multiple class hierarchies.
+
+```dart
+// Mixin definition
+mixin Flyable {
+  void fly() {
+    print("Flying through the air");
+  }
+  
+  void land() {
+    print("Landing safely");
+  }
+}
+
+mixin Swimmable {
+  void swim() {
+    print("Swimming in water");
+  }
+}
+
+// Abstract class
+abstract class Bird {
+  String name;
+  
+  Bird(this.name);
+  
+  // Abstract method (must be implemented by subclasses)
+  abstract void makeSound();
+  
+  // Concrete method
+  void breathe() {
+    print("$name is breathing");
+  }
+}
+
+// Class using mixins
+class Duck extends Bird with Swimmable, Flyable {
+  Duck(String name) : super(name);
+  
+  @override
+  void makeSound() {
+    print("$name quacks: Quack! Quack!");
+  }
+}
+
+void main() {
+  Duck duck = Duck("Donald");
+  
+  // Using mixin methods
+  duck.makeSound();
+  duck.swim();
+  duck.fly();
+}
+```
+
+### 4. Exception Handling ⚠️
+
+Handle errors gracefully with try-catch blocks.
+
+```dart
+// Custom exception class
+class CustomException implements Exception {
+  final String message;
+  CustomException(this.message);
+  
+  @override
+  String toString() => "CustomException: $message";
+}
+
+class Calculator {
+  static double divide(double a, double b) {
+    if (b == 0) {
+      throw CustomException("Division by zero is not allowed");
+    }
+    return a / b;
+  }
+}
+
+void main() {
+  // Basic exception handling
+  try {
+    double result = Calculator.divide(10, 0);
+    print("Result: $result");
+  } on CustomException catch (e) {
+    print("Custom error: $e");
+  } catch (e) {
+    print("Unexpected error: $e");
+  } finally {
+    print("This always executes");
+  }
+}
+```
+
+### 5. Generics 🎪
+
+Generics allow you to write type-safe, reusable code.
+
+```dart
+// Generic class
+class Box<T> {
+  T content;
+  
+  Box(this.content);
+  
+  T getContent() => content;
+  
+  void setContent(T newContent) {
+    content = newContent;
+  }
+}
+
+// Generic function
+T findFirst<T>(List<T> list, bool Function(T) predicate) {
+  for (T item in list) {
+    if (predicate(item)) {
+      return item;
+    }
+  }
+  throw Exception("No matching item found");
+}
+
+void main() {
+  // Using generic class
+  Box<String> stringBox = Box("Hello");
+  Box<int> intBox = Box(42);
+  
+  print("String box: ${stringBox.getContent()}");
+  print("Int box: ${intBox.getContent()}");
+  
+  // Using generic function
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  int firstEven = findFirst(numbers, (n) => n % 2 == 0);
+  print("First even number: $firstEven");
+}
+```
+
+### 6. Futures & Async/Await ⏰
+
+Handle asynchronous operations with Futures and async/await.
+
+```dart
+import 'dart:async';
+
+// Simulating async operations
+Future<String> fetchUserName(int id) async {
+  // Simulate network delay
+  await Future.delayed(Duration(seconds: 2));
+  
+  if (id == 1) {
+    return "Alice";
+  } else if (id == 2) {
+    return "Bob";
+  } else {
+    throw Exception("User not found");
+  }
+}
+
+// Async function with error handling
+Future<void> loadUserData(int userId) async {
+  try {
+    print("Loading user data for ID: $userId");
+    
+    String name = await fetchUserName(userId);
+    print("User name: $name");
+    
+    print("User data loaded successfully!");
+  } catch (e) {
+    print("Error loading user data: $e");
+  }
+}
+
+void main() async {
+  print("=== Async/Await Demo ===");
+  await loadUserData(1);
+}
+```
+
+### 7. Extension Methods 🔧
+
+Add functionality to existing types without modifying their source code.
+
+```dart
+// Extension on String
+extension StringExtension on String {
+  bool get isEmail {
+    return RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(this);
+  }
+  
+  String get capitalize {
+    if (isEmpty) return this;
+    return this[0].toUpperCase() + substring(1).toLowerCase();
+  }
+  
+  String get reverse {
+    return split('').reversed.join('');
+  }
+}
+
+// Extension on int
+extension IntExtension on int {
+  bool get isEven => this % 2 == 0;
+  bool get isOdd => this % 2 != 0;
+  
+  String get ordinal {
+    if (this >= 11 && this <= 13) {
+      return '${this}th';
+    }
+    switch (this % 10) {
+      case 1:
+        return '${this}st';
+      case 2:
+        return '${this}nd';
+      case 3:
+        return '${this}rd';
+      default:
+        return '${this}th';
+    }
+  }
+}
+
+void main() {
+  // Using String extensions
+  String email = "user@example.com";
+  String name = "john doe";
+  
+  print("Is email valid: ${email.isEmail}");
+  print("Capitalized: ${name.capitalize}");
+  print("Reversed: ${name.reverse}");
+  
+  // Using int extensions
+  int number = 12;
+  print("Is even: ${number.isEven}");
+  print("Ordinal: ${number.ordinal}");
+}
+```
 
 ---
 
-## 📚 Course Structure & Timeline
+## 💻 Hands-On Projects
 
-### Week 1-2: Flutter Fundamentals 🏗️
-- **Branch**: `flutter-basics`
-- **Topics**: Dart basics, Widgets, Layouts, Navigation
-- **Project**: "Hello World" → "My First App"
+### Project 1: Library Management System 📚
+**Difficulty**: ⭐⭐⭐⭐  
+**Time**: 2 hours
 
-### Week 3-4: UI/UX Design 🎨
-- **Branch**: `ui-design`
-- **Topics**: Material Design, Custom Widgets, Animations
-- **Project**: "Beautiful Calculator App"
+Build a complete library management system using advanced Dart concepts.
 
-### Week 5-6: State Management 🔄
-- **Branch**: `state-management`
-- **Topics**: setState, Provider, Bloc, Riverpod
-- **Project**: "Todo List with State Management"
+**Requirements**:
+- Book class with inheritance (Fiction, NonFiction)
+- User management with mixins
+- Exception handling for invalid operations
+- Generic collections for different data types
+- Async operations for data loading
 
-### Week 7-8: Data & APIs 🌐
-- **Branch**: `api-integration`
-- **Topics**: HTTP requests, JSON parsing, Local storage
-- **Project**: "Weather App with API"
+### Project 2: Weather App with Streams 🌤️
+**Difficulty**: ⭐⭐⭐⭐⭐  
+**Time**: 2.5 hours
 
-### Week 9-10: Advanced Topics 🚀
-- **Branch**: `advanced-topics`
-- **Topics**: Firebase, Authentication, Push notifications
-- **Project**: "Social Media App"
+Create a weather app that uses streams for real-time data.
 
-### Week 11-12: Testing & Deployment 🧪
-- **Branch**: `testing-deployment`
-- **Topics**: Unit testing, Widget testing, App store deployment
-- **Project**: "Final Portfolio App"
+**Requirements**:
+- Stream-based weather data
+- Error handling with custom exceptions
+- Generic data processing
+- Extension methods for data formatting
+- Async/await for API calls
 
 ---
 
-## 🎓 Learning Resources
+## 🎯 Key Takeaways
 
-### 📖 Essential Reading
-- [Flutter Documentation](https://flutter.dev/docs) - Your bible for Flutter
-- [Dart Language Tour](https://dart.dev/guides/language/language-tour) - Master the language
-- [Flutter Cookbook](https://flutter.dev/docs/cookbook) - Practical examples
+After completing this branch, you should understand:
 
-### 🎥 Video Resources
-- [Flutter YouTube Channel](https://www.youtube.com/c/flutterdev) - Official Flutter videos
-- [The Net Ninja Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ) - Great beginner series
-
-### 🛠️ Tools & Extensions
-- **VS Code Extensions**: Flutter, Dart, Awesome Flutter Snippets
-- **Android Studio**: Flutter and Dart plugins
-- **Figma**: For UI/UX design (free tier available)
+1. **Object-Oriented Programming**: Classes, inheritance, polymorphism
+2. **Advanced OOP**: Mixins, abstract classes, interfaces
+3. **Error Handling**: Robust exception management
+4. **Generics**: Type-safe reusable code
+5. **Asynchronous Programming**: Futures, async/await, streams
+6. **Advanced Collections**: Functional programming concepts
+7. **Extension Methods**: Adding functionality to existing types
+8. **Function Types**: Functions as first-class citizens
+9. **Package Management**: Code organization and imports
 
 ---
 
-## 🤝 Getting Help
+## 🚀 Next Steps
 
-### When You're Stuck (And You Will Be! 😅)
-
-1. **Check the Branch README**: Each topic branch has detailed explanations
-2. **Google It**: 90% of Flutter problems have been solved before
-3. **Stack Overflow**: The Flutter community is super helpful
-4. **Ask in Class**: Don't suffer in silence – we're all learning together!
-5. **Office Hours**: Come prepared with specific questions
-
-### 🆘 Common Issues & Solutions
-
-| Problem | Solution |
-|---------|----------|
-| `flutter doctor` shows issues | Follow the specific instructions it provides |
-| App won't run | Check if you're in the right directory and run `flutter pub get` |
-| Hot reload not working | Try hot restart instead (`r` in terminal) |
-| Emulator not starting | Check if virtualization is enabled in BIOS |
-
----
-
-## 🏆 Success Metrics
-
-By the end of this course, you should be able to:
-
-- [ ] Build a complete Flutter app from scratch
-- [ ] Implement beautiful, responsive UIs
-- [ ] Manage app state effectively
-- [ ] Integrate with external APIs
-- [ ] Test your applications
-- [ ] Deploy apps to app stores
-- [ ] Debug and troubleshoot issues
-- [ ] Work with a team on Flutter projects
-
----
-
-## 🎉 Final Words
-
-Remember: **Every expert was once a beginner. Every pro was once an amateur. Every icon was once an unknown.** 
-
-The journey of a thousand apps begins with a single `flutter create` command! 
-
-So grab your favorite beverage, fire up your IDE, and let's build some amazing mobile apps together! 🚀
+Once you've mastered Dart advanced concepts:
+1. Move to Flutter-specific branches
+2. Practice with real-world projects
+3. Explore Flutter's widget system
+4. Build complex mobile applications
 
 ---
 
 <div align="center">
 
-**Happy Coding! 🎯**
+**You're Now a Dart Ninja! 🥷**
 
-*Made with ❤️ for the future mobile developers of the world*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/CSE464-Mobile-Development?style=social)](https://github.com/yourusername/CSE464-Mobile-Development)
+*Ready to conquer Flutter development!*
 
 </div>
