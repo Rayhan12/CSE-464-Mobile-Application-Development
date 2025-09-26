@@ -20,7 +20,8 @@
 Welcome to **CSE 464: Mobile Application Development**! This isn't just another programming course – it's your gateway to building the next generation of mobile apps that could change the world! 🌍
 
 ### What You'll Learn 🧠
-- **Flutter & Dart**: The dynamic duo that's taking the mobile world by storm
+- **Dart Programming**: Master the language that powers Flutter
+- **Flutter Framework**: The dynamic duo that's taking the mobile world by storm
 - **Cross-platform Development**: Build once, run everywhere (iOS, Android, Web, Desktop!)
 - **UI/UX Design**: Create beautiful, intuitive interfaces that users will love
 - **State Management**: Master the art of managing app data like a pro
@@ -48,6 +49,8 @@ This repository is organized like a well-structured city with different neighbor
 └── 🎯 Quick Start Guide
 
 🌿 Topic Branches
+├── 🎯 dart-basics
+├── 🚀 dart-advanced
 ├── 📱 flutter-basics
 ├── 🎨 ui-design
 ├── 🔄 state-management
@@ -94,11 +97,11 @@ cd CSE464-Mobile-Development
 # See all available branches
 git branch -r
 
-# Switch to a specific topic (example: Flutter Basics)
-git checkout flutter-basics
+# Switch to a specific topic (example: Dart Basics)
+git checkout dart-basics
 
 # Or create and switch to a new branch
-git checkout -b your-name-flutter-basics
+git checkout -b your-name-dart-basics
 ```
 
 #### Step 3: Set Up Your Development Environment
@@ -126,30 +129,35 @@ flutter run
 
 ## 📚 Course Structure & Timeline
 
-### Week 1-2: Flutter Fundamentals 🏗️
+### Week 1: Dart Fundamentals 🎯
+- **Branch**: `dart-basics`
+- **Topics**: Variables, Functions, Collections, Null Safety, Control Flow
+- **Project**: "Calculator App" → "Student Grade Calculator"
+
+### Week 2: Dart Advanced 🚀
+- **Branch**: `dart-advanced`
+- **Topics**: OOP, Inheritance, Generics, Async/Await, Streams
+- **Project**: "Library Management System" → "Weather App with Streams"
+
+### Week 3-4: Flutter Fundamentals 🏗️
 - **Branch**: `flutter-basics`
-- **Topics**: Dart basics, Widgets, Layouts, Navigation
+- **Topics**: Widgets, Layouts, Navigation, State Management Basics
 - **Project**: "Hello World" → "My First App"
 
-### Week 3-4: UI/UX Design 🎨
+### Week 5-6: UI/UX Design 🎨
 - **Branch**: `ui-design`
 - **Topics**: Material Design, Custom Widgets, Animations
 - **Project**: "Beautiful Calculator App"
 
-### Week 5-6: State Management 🔄
+### Week 7-8: State Management 🔄
 - **Branch**: `state-management`
 - **Topics**: setState, Provider, Bloc, Riverpod
 - **Project**: "Todo List with State Management"
 
-### Week 7-8: Data & APIs 🌐
+### Week 9-10: Data & APIs 🌐
 - **Branch**: `api-integration`
 - **Topics**: HTTP requests, JSON parsing, Local storage
 - **Project**: "Weather App with API"
-
-### Week 9-10: Advanced Topics 🚀
-- **Branch**: `advanced-topics`
-- **Topics**: Firebase, Authentication, Push notifications
-- **Project**: "Social Media App"
 
 ### Week 11-12: Testing & Deployment 🧪
 - **Branch**: `testing-deployment`
