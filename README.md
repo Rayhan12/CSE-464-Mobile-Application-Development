@@ -62,6 +62,7 @@ void main() {
   String name = "Flutter Developer";
   int age = 25;
   double height = 5.9;
+  num number = 5.6 || 9;
   bool isLearning = true;
   
   // Type inference with 'var'
