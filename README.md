@@ -267,6 +267,23 @@ void main() {
   // forEach method
   print("\nForEach method:");
   fruits.forEach((fruit) => print("Fruit: $fruit"));
+
+
+  // Class CODE
+  for(int i=1; i<=5; i++){
+    print("Hello World ${i+1}");
+  }
+
+
+  List<dynamic> listOfData = ["A", 10, "C", 34.3223, "E"];
+
+  for(int i = 0; i<listOfData.length; i++){
+    print(listOfData[i]);
+  }
+
+  for(var name in listOfData){
+    print(name);
+  }
 }
 ```
 
