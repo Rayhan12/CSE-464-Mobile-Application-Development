@@ -195,6 +195,21 @@ void main() {
   print("Status: $status");
   
   // Switch statement
+
+  int x =1;
+  switch (x){
+    case 1: print("int is 1");
+    break;
+    case 2: print("int is 2");
+    break;
+    case 3: print("int is 3");
+    break;
+    case 4: print("int is 4");
+    break;
+    default: print("int is not between 1 to 4");
+  }
+
+  
   String day = "Monday";
   switch (day) {
     case "Monday":
