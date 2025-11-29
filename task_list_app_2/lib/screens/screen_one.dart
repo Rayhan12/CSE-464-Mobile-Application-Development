@@ -17,30 +17,44 @@ class _ScreenOneState extends State<ScreenOne> {
     return Scaffold(
       appBar: AppBar(title: const Text('Screen One Page')),
 
-
-
       body: Consumer<TaskManagementService>(
-        builder: (context,tms,_) {
-          return ListView(
-            children: [
-              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(tms.counter.toString(), style: TextStyle(fontSize: 30),),
-                ],
-              ),
+        builder: (context, tms, _) {
+          return ListView.builder(
+            itemCount: tms.tasks.length,
+            itemBuilder: (context, index) {
+              final localTask = tms.tasks[index];
 
-              ElevatedButton(onPressed: (){tms.addCount();}, child: Text('Add Value')),
-              ElevatedButton(onPressed: (){tms.removeCount();}, child: Text('Remove Value')),
-              ElevatedButton(onPressed: (){tms.resetCount();}, child: Text('Reset Value')),
-            ],
-
-
+              return ListTile(
+                title: Text(localTask.title),
+                subtitle: Text(localTask.description),
+                trailing: Icon(
+                  localTask.isCompleted
+                      ? Icons.check_circle
+                      : Icons.circle_outlined,
+                  color: localTask.isCompleted ? Colors.green : null,
+                ),
+              );
+            },
           );
-        }
-      ),
 
+          // return ListView(
+          //   children: [
+
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         Text(tms.counter.toString(), style: TextStyle(fontSize: 30),),
+          //       ],
+          //     ),
+
+          //     ElevatedButton(onPressed: (){tms.addCount();}, child: Text('Add Value')),
+          //     ElevatedButton(onPressed: (){tms.removeCount();}, child: Text('Remove Value')),
+          //     ElevatedButton(onPressed: (){tms.resetCount();}, child: Text('Reset Value')),
+          //   ],
+
+          // );
+        },
+      ),
 
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(20),
